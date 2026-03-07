@@ -23,6 +23,69 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Hello i am home.html</h1>
+    <section class="w-11/12 shadow-md rounded-md mx-auto py-5 px-5 mb-10 mt-5">
+      <div class="flex justify-between items-center">
+        <div id="logo" class="flex items-center gap-3">
+          <img class="w-2/12" src="assets/github-logo.png" alt="" />
+          <h1 class="font-bold text-[#1F2937]">GitHub Issues Tracker</h1>
+        </div>
+        <div id="search" class="flex items-center gap-3">
+          <input type="text" placeholder="Search" class="input input-md" />
+          <button class="btn border-none shadow-none text-white bg-[#4A00FF]">
+            Search
+          </button>
+        </div>
+      </div>
+    </section>
+    <section
+      id="filter-btn"
+      class="w-9/12 mx-auto p-5 space-x-3 shadow-md rounded-lg"
+    >
+      <button class="btn text-white bg-[#4A00FF] shadow-none border-none px-9">
+        All
+      </button>
+      <button class="btn shadow-none border-none px-9">Open</button>
+      <button class="btn shadow-none border-none px-9">Closed</button>
+    </section>
+
+    <section
+      id="issueCount"
+      class="w-9/12 mx-auto p-5 space-x-3 shadow-md rounded-lg flex justify-between items-center mt-4"
+    >
+      <div class="flex items-center gap-3">
+        <img class="w-1.5/12" src="assets/Aperture.png" alt="" />
+        <div>
+            <h1 class="font-bold text-[#1F2937]">50 Issues</h1>
+            <p class="text-[#64748B]">Track and manage your project issues</p>
+        </div>
+      </div>
+      <div class="flex gap-4">
+        <div class="flex gap-2">
+            <img src="assets/Open-Status.png" alt="">
+            <p>Open</p>
+        </div>
+        <div class="flex gap-2">
+            <img src="assets/Closed- Status .png" alt="">
+            <p>Closed</p>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="w-9/12 mx-auto p-5 space-x-3 shadow-md rounded-lg flex justify-between items-center mt-4">
+        <div>
+            <img src="assets/Open-Status.png" alt="">
+            <h1>High</h1>
+        </div>
+        <div>
+            <h1>Fix navigation menu on mobile devices</h1>
+            <p>The navigation menu doesn't collapse properly on mobile devices...</p>
+        </div>
+        <div>
+            <button></button>
+        </div>
+
+
+    </section>
   </body>
 </html>
