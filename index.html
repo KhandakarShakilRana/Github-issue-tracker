@@ -1,18 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
     <title>GitHub issue Tracker</title>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>This is me</h1>
-</body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="w-11/12 m-auto flex p-9">
+      <div
+        class="w-4/12 content mx-auto flex flex-col items-center shadow-xl rounded-lg"
+      >
+        <img class="m-6" src="assets/github-logo.png" alt="" />
+        <h1 class="text-[#1F2937]">GitHub Issues Tracker</h1>
+        <p class="text-[#64748B]">Sign in to manage your issues</p>
+        <fieldset class="fieldset rounded-box w-full pt-9 px-9 pb-4">
+          <label class="label font-bold text-sm text-[#1F2937]">Username</label>
+          <input
+            type="email"
+            class="input text-[#64748B] w-full"
+            placeholder="Enter Username"
+            value="admin"
+          />
+          <p class="text-[#4A00FF]">Default: admin</p>
+
+          <label class="label font-bold text-sm text-[#1F2937]">Password</label>
+          <input
+            type="password"
+            class="input text-[#64748B] w-full"
+            placeholder="Enter Password"
+            value="admin123"
+          />
+          <p class="text-[#4A00FF]">Default: admin123</p>
+
+          <button class="btn mt-4 bg-[#4A00FF] text-white p-7">Sign In</button>
+        </fieldset>
+        <p class="text-gray-500 mb-4">OR</p>
+        <div class="w-full px-9">
+            <h1 class="text-center mb-4 text-[#64748B]">Demo Credentials</h1>
+            <div class="bg-[#f5f8fc] w-full text-center p-5 mb-4">
+                <h1><span class="font-bold">Username:</span> admin</h1>
+                <h1><span class="font-bold">Password:</span> admin123</h1>
+            </div>
+        </div>
+    </section>
+  </body>
 </html>
