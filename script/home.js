@@ -4,24 +4,47 @@ const loadIssues = () => {
     .then((res) => res.json())
     .then((data) => {
       const allIssues = data.data;
-      document.getElementById("all-btn").addEventListener("click", ()=> {
+      const allBtn = document.getElementById("all-btn");
+      const openBtn = document.getElementById("open-btn");
+      const closedBtn = document.getElementById("closed-btn");
+      allBtn.classList.add("text-white", "bg-[#4A00FF]");
+      openBtn.classList.remove("text-white", "bg-[#4A00FF]");
+      closedBtn.classList.remove("text-white", "bg-[#4A00FF]");
+      displayIssues(allIssues);
+      document.getElementById("all-btn").addEventListener("click", () => {
         const displaySection = document.getElementById("display-section");
         displaySection.innerHTML = "";
-        displayIssues(allIssues)
-
-      })
+        
+        allBtn.className =
+          "btn text-white bg-[#4A00FF] shadow-none border-none px-9";
+        openBtn.className = "btn shadow-none border-none px-9";
+        closedBtn.className = "btn shadow-none border-none px-9";
+        displayIssues(allIssues);
+      });
       document.getElementById("open-btn").addEventListener("click", () => {
         const displaySection = document.getElementById("display-section");
         displaySection.innerHTML = "";
+       
+        allBtn.className = "btn shadow-none border-none px-9";
+        openBtn.className =
+          "btn text-white bg-[#4A00FF] shadow-none border-none px-9";
+        closedBtn.className = "btn shadow-none border-none px-9";
         const openIssues = allIssues.filter((issue) => issue.status === "open");
         displayIssues(openIssues);
       });
 
-      document.getElementById("closed-btn").addEventListener("click",()=>{
+      document.getElementById("closed-btn").addEventListener("click", () => {
         const displaySection = document.getElementById("display-section");
         displaySection.innerHTML = "";
-        const closedissues = allIssues.filter((issue) => issue.status === "closed")
-        displayIssues(closedissues)
+        
+        allBtn.className = "btn shadow-none border-none px-9";
+        openBtn.className = "btn shadow-none border-none px-9";
+        closedBtn.className =
+          "btn text-white bg-[#4A00FF] shadow-none border-none px-9";
+        const closedissues = allIssues.filter(
+          (issue) => issue.status === "closed",
+        );
+        displayIssues(closedissues);
       });
     });
 };
@@ -34,7 +57,7 @@ const displayIssues = (data) => {
   data.forEach((element) => {
     const div = document.createElement("div");
     div.innerHTML = `
-        <div class="border-t-4 ${element.status == "open" ? " border-t-[#00A96E]" : "border-t-[#A855F7]"} rounded-md p-3 space-y-4 shadow-md h-85 flex flex-col justify-evenly">
+        <div onclick="openModal(${element.id})" class="border-t-4 ${element.status == "open" ? " border-t-[#00A96E]" : "border-t-[#A855F7]"} rounded-md p-3 space-y-4 shadow-md h-85 flex flex-col justify-evenly">
         <div class="flex justify-between ">
           ${element.status == "open" ? '<img src="assets/Open-Status.png" alt="" />' : '<img src="assets/Closed- Status .png" alt="" />'}
           <h1 class="px-4 rounded-xl py-1 text-sm ${
@@ -90,3 +113,14 @@ const displayIssues = (data) => {
     displaySection.appendChild(div);
   });
 };
+
+loadIssues()
+
+
+function openModal() {
+  document.getElementById("my_modal_6").checked = true;
+}
+
+function closeModal() {
+  document.getElementById("my_modal_6").checked = false;
+}

@@ -41,11 +41,13 @@
       id="filter-btn"
       class="w-9/12 mx-auto p-5 space-x-3 shadow-md rounded-lg"
     >
-      <button onclick="loadIssues()" id="all-btn" class="btn text-white bg-[#4A00FF] shadow-none border-none px-9">
-        All
+      <button id="all-btn" class="btn shadow-none border-none px-9">All</button>
+      <button id="open-btn" class="btn shadow-none border-none px-9">
+        Open
       </button>
-      <button onclick="loadIssues()" id="open-btn" class="btn shadow-none border-none px-9">Open</button>
-      <button onclick="loadIssues()" id="closed-btn" class="btn shadow-none border-none px-9">Closed</button>
+      <button id="closed-btn" class="btn shadow-none border-none px-9">
+        Closed
+      </button>
     </section>
 
     <section
@@ -55,7 +57,7 @@
       <div class="flex items-center gap-3">
         <img class="w-1.5/12" src="assets/Aperture.png" alt="" />
         <div>
-          <h1 id="track-count" class="font-bold text-[#1F2937]">50 Issues</h1>
+          <h1 id="track-count" class="font-bold text-[#1F2937]">Issues</h1>
           <p class="text-[#64748B]">Track and manage your project issues</p>
         </div>
       </div>
@@ -74,12 +76,23 @@
     <section
       id="display-section"
       class="w-9/12 mx-auto p-5 space-x-3 shadow-md rounded-lg mt-4 grid grid-cols-4 gap-4"
-    >
-    
-    </section>
+    ></section>
+
+  
+    <button onclick="openModal()" class="btn">Open Modal</button>
+    <input type="checkbox" id="my_modal_6" class="modal-toggle" />
+    <div class="modal" role="dialog">
+      <div class="modal-box">
+        <h3 class="text-lg font-bold">Hello!</h3>
+        <p class="py-4">This modal works with a hidden checkbox!</p>
+        <div class="modal-action">
+          <label for="my_modal_6" class="btn">Close!</label>
+        </div>
+      </div>
+    </div>
 
     <script src="script/home.js"></script>
   </body>
 </html>
 
-<img src="assets/ve.png" alt="">
+<img src="assets/ve.png" alt="" />
