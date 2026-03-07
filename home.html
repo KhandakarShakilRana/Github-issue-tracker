@@ -41,11 +41,11 @@
       id="filter-btn"
       class="w-9/12 mx-auto p-5 space-x-3 shadow-md rounded-lg"
     >
-      <button class="btn text-white bg-[#4A00FF] shadow-none border-none px-9">
+      <button onclick="loadIssues()" id="all-btn" class="btn text-white bg-[#4A00FF] shadow-none border-none px-9">
         All
       </button>
-      <button class="btn shadow-none border-none px-9">Open</button>
-      <button class="btn shadow-none border-none px-9">Closed</button>
+      <button onclick="loadIssues()" id="open-btn" class="btn shadow-none border-none px-9">Open</button>
+      <button onclick="loadIssues()" id="closed-btn" class="btn shadow-none border-none px-9">Closed</button>
     </section>
 
     <section

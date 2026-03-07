@@ -2,13 +2,35 @@ const loadIssues = () => {
   const url = "https://phi-lab-server.vercel.app/api/v1/lab/issues";
   fetch(url)
     .then((res) => res.json())
-    .then((data) => displayIssues(data.data));
+    .then((data) => {
+      const allIssues = data.data;
+      document.getElementById("all-btn").addEventListener("click", ()=> {
+        const displaySection = document.getElementById("display-section");
+        displaySection.innerHTML = "";
+        displayIssues(allIssues)
+
+      })
+      document.getElementById("open-btn").addEventListener("click", () => {
+        const displaySection = document.getElementById("display-section");
+        displaySection.innerHTML = "";
+        const openIssues = allIssues.filter((issue) => issue.status === "open");
+        displayIssues(openIssues);
+      });
+
+      document.getElementById("closed-btn").addEventListener("click",()=>{
+        const displaySection = document.getElementById("display-section");
+        displaySection.innerHTML = "";
+        const closedissues = allIssues.filter((issue) => issue.status === "closed")
+        displayIssues(closedissues)
+      });
+    });
 };
 
 const displayIssues = (data) => {
   const displaySection = document.getElementById("display-section");
+  displaySection.innerHTML = "";
   const trackCount = document.getElementById("track-count");
-  trackCount.innerText = data.length + " Issues"
+  trackCount.innerText = data.length + " Issues";
   data.forEach((element) => {
     const div = document.createElement("div");
     div.innerHTML = `
@@ -61,11 +83,10 @@ const displayIssues = (data) => {
           ? (labelText.className =
               " font-bold px-2 py-1 rounded text-xs flex flex-wrap items-center gap-2 bg-[#FDE68A] text-[#D97706]")
           : (labelText.className =
-              "font-bold px-2 py-1 rounded text-xs flex flex-wrap items-center gap-2 bg-[#DEFCE8] text-[#00A96E]") ;
-            
+              "font-bold px-2 py-1 rounded text-xs flex flex-wrap items-center gap-2 bg-[#DEFCE8] text-[#00A96E]");
+
       labelsContainer.appendChild(labelText);
     });
     displaySection.appendChild(div);
   });
 };
-loadIssues();
