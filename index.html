@@ -37,6 +37,7 @@
             class="input text-[#64748B] w-full"
             placeholder="Enter Username"
             value="admin"
+            id="username"
           />
           <p class="text-[#4A00FF]">Default: admin</p>
 
@@ -46,10 +47,11 @@
             class="input text-[#64748B] w-full"
             placeholder="Enter Password"
             value="admin123"
+            id="password"
           />
           <p class="text-[#4A00FF]">Default: admin123</p>
 
-          <button class="btn mt-4 bg-[#4A00FF] text-white p-7">Sign In</button>
+          <button id="sign-In-Btn" onclick="signinbtn()" class="btn mt-4 bg-[#4A00FF] text-white p-7">Sign In</button>
         </fieldset>
         <p class="text-gray-500 mb-4">OR</p>
         <div class="w-full px-9">
@@ -60,5 +62,7 @@
             </div>
         </div>
     </section>
+
+    <script src="script/index.js"></script>
   </body>
 </html>
