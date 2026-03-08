@@ -23,8 +23,8 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <section class="w-11/12 shadow-md rounded-md mx-auto py-5 px-5 mb-10 mt-5">
-      <div class="flex justify-between items-center">
+    <section class="w-11/12 shadow-md rounded-md mx-auto py-5 px-5 mb-10 mt-5 ">
+      <div class="flex flex-wrap space-y-4 justify-between items-center">
         <div id="logo" class="flex items-center gap-3">
           <img class="w-2/12" src="assets/github-logo.png" alt="" />
           <h1 class="font-bold text-[#1F2937]">GitHub Issues Tracker</h1>
@@ -39,7 +39,7 @@
     </section>
     <section
       id="filter-btn"
-      class="w-9/12 mx-auto p-5 space-x-3 shadow-md rounded-lg"
+      class="w-9/12 mx-auto p-5 space-x-3 shadow-md rounded-lg flex flex-wrap space-y-3"
     >
       <button id="all-btn" class="btn shadow-none border-none px-9">All</button>
       <button id="open-btn" class="btn shadow-none border-none px-9">
@@ -52,7 +52,7 @@
 
     <section
       id="issueCount"
-      class="w-9/12 mx-auto p-5 space-x-3 shadow-md rounded-lg flex justify-between items-center mt-4"
+      class="w-9/12 mx-auto p-5 space-x-3 shadow-md rounded-lg flex flex-col sm:flex-row space-y-4  sm:justify-between items-start sm:items-center mt-4"
     >
       <div class="flex items-center gap-3">
         <img class="w-1.5/12" src="assets/Aperture.png" alt="" />
@@ -75,20 +75,19 @@
 
     <section
       id="display-section"
-      class="w-9/12 mx-auto p-5 space-x-3 shadow-md rounded-lg mt-4 grid grid-cols-4 gap-4"
+      class="w-9/12 mx-auto p-5 space-x-3 shadow-md rounded-lg mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"
     ></section>
 
   
-    <button onclick="openModal()" class="btn">Open Modal</button>
-    <input type="checkbox" id="my_modal_6" class="modal-toggle" />
+    
+    <div">
+      <input type="checkbox" id="my_modal_6" class="modal-toggle" />
     <div class="modal" role="dialog">
-      <div class="modal-box">
-        <h3 class="text-lg font-bold">Hello!</h3>
-        <p class="py-4">This modal works with a hidden checkbox!</p>
-        <div class="modal-action">
-          <label for="my_modal_6" class="btn">Close!</label>
-        </div>
+      <div id="modal" class="modal-box space-y-4">
+       
+        
       </div>
+    </div>
     </div>
 
     <script src="script/home.js"></script>
