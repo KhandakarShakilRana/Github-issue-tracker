@@ -139,8 +139,8 @@ const openModal = async (id) => {
    <div class="">
           <h1 class="text-xl font-bold">${data.title}</h1>
           <div class="flex gap-4 text-[#64748B]">
-          <p>${data.status}</p>
-          <p>Opened By ${data.author}</p>
+          <p class="${data.status == "open" ? " text-[#00A96E]" : "text-[#A855F7]"}">${data.status.toUpperCase()}</p>
+          <p class="">Opened By ${data.author}</p>
           <p>${new Date(data.createdAt).toLocaleString()} </p>
         </div>
         </div>
