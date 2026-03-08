@@ -91,7 +91,7 @@ const displayIssues = (data) => {
           <hr class="border-gray-300 mt-3" />
           <div class="text-sm text-gray-500 mt-3">
             <p>Created by ${element.author}</p>
-            <p>${new Date(element.updatedAt).toLocaleString()}</p>
+            <p>${new Date(element.createdAt).toLocaleString()}</p>
           </div>
         </div>
       </div>
