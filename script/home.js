@@ -46,6 +46,14 @@ const loadIssues = () => {
         );
         displayIssues(closedissues);
       });
+
+      
+      const searchBtn = document.getElementById("search-btn");
+      searchBtn.addEventListener("click", ()=>{
+        const searchInput = document.getElementById("search-input").value.toLowerCase()
+      const filtered = allIssues.filter(issue => issue.title.toLowerCase().includes(searchInput));
+      displayIssues(filtered)
+      })
     });
 };
 
@@ -195,3 +203,6 @@ const labelsContainer = modal.querySelector(".modal-labels-container");
 }
 
 
+const searchIssues = ()=> {
+  
+}
