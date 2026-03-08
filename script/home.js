@@ -1,8 +1,11 @@
 const loadIssues = () => {
+  const loader = document.querySelector(".loading")
+  loader.classList.remove("hidden")
   const url = "https://phi-lab-server.vercel.app/api/v1/lab/issues";
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
+      loader.classList.add("hidden")
       const allIssues = data.data;
       const allBtn = document.getElementById("all-btn");
       const openBtn = document.getElementById("open-btn");
@@ -122,7 +125,7 @@ const displayIssues = (data) => {
   });
 };
 
-loadIssues()
+
 
 
 const openModal = async (id) => {
@@ -203,6 +206,4 @@ const labelsContainer = modal.querySelector(".modal-labels-container");
 }
 
 
-const searchIssues = ()=> {
-  
-}
+loadIssues()
